@@ -1,11 +1,18 @@
 def caller(*user):
-    number = int(input("Enter the number: "))
-    for in_dict in user:
-        if number in in_dict:
-            print("The number you entered corresponds to:", in_dict[number])
-            break
-    else:
-        print("User not found")
+    try:
+        number = int(input("Enter the number: "))
+        for in_dict in user:
+            if number in in_dict:
+                print("The number you entered corresponds to:", in_dict[number])
+                break
+        else:
+            print("User not found")
+    except ValueError:
+        print("Please enter a valid number.")
+
+# Your dictionaries A, B, C remain the same
+
+caller(A, B, C)
 
 # Format for User Contact book
 # var = {"Number": "name"}
